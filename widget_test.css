@@ -1,0 +1,116 @@
+/* ------------ SEARCH WIDGET ----------- */
+
+/*** @export "widget" css */
+
+#right {
+    /* contains search widget */
+    float: right;
+    width: 500px;
+    height: 150px;
+}
+#searchwidget {
+    width: 415px;
+    float: right;
+    margin: 0;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+#searchwidget .nav-tabs {
+    text-transform: uppercase;
+    border-bottom-color: white;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+#searchwidget .nav>li>a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    border: 0;
+    border-radius: 0;
+}
+#searchwidget ul li {
+    margin: 0;
+    margin-top: 3px;
+    border: 0;
+    border-bottom-width: 0;
+    margin-right: .5em;
+    background-color: #cccc99;
+    letter-spacing: normal;
+    text-align: center;
+    width: 100px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+    font-size: 10px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold !important;
+}
+#searchwidget ul li:last-child {
+    margin-right: 0;
+}
+#searchwidget ul li.active, #searchwidget ul li.active a {
+    background-color: #efefdc;
+    border: 0;
+}
+#searchwidget ul li a:hover {
+    background-color: inherit;
+    border: 0;
+}
+#searchwidget .tab-content .tab-pane {
+    padding-top: 10px;
+}
+#searchwidget .label select {
+    width: 85px;
+    color: black;
+    font-size: 11px;
+}
+#searchwidget .searchwidget_radio {
+    color: white;
+    font-size: 11px;
+    text-align: right;
+    margin-right: -43px;
+    padding-top: 6px;
+}
+#searchwidget .button {
+    height: 22px;
+    margin-left: 0;
+    margin-top: .2em;
+}
+#searchwidget .searchwidget_radio span {
+    padding-left: 5px;
+    padding-right: 14px;
+    font-weight: normal;
+}
+#searchwidget .searchwidget_input {
+    width: 280px;
+    height: 20px;
+    padding: 3px;
+    margin-right: -3px;
+    border: none;
+    margin-left: 5px;
+    color: black;
+    font-size: 12px;
+}
+#searchwidget .tab-content .tab-pane form .label {
+    position: relative;
+    float: left;
+    margin: 0;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 1px;
+}
+#search_extras {
+    padding-top: 6px;
+    clear: both;
+    color: #cccc99;
+    text-align: right;
+    margin: 0;
+    font-size: 11px;
+    padding-right: 7px;
+}
+#search_extras a {
+    text-decoration: none;
+    color: #cccc99;
+    margin-left: 6px;
+    margin-right: 6px;
+}

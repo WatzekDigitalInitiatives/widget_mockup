@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Widget mockup test page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- BEGIN: CUSTOM HEAD JS/CSS -->
+<link rel="stylesheet" href="http://library.lclark.edu/library.lclark.style/build/watzek_style.min.css" />
+<link rel="stylesheet" href="widget_test.css" />
+<script src="https://library.lclark.edu/library.lclark.style/build/watzek_js.min.js"></script>
+<script src="https://library.lclark.edu/javascript/data/dbs_json3.js"></script>
+<!-- END: CUSTOM HEAD JS/CSS -->
+<script>
+$('document').ready(function(){
+    // Code for Safari
+    $('#searchwidget').css('WebkitTransform', 'scale(3,3)');
+    // Code for IE9
+    $('#searchwidget').css('msTransform', 'scale(3,3)');
+    // Standard syntax
+    $('#searchwidget').css('transform', 'scale(3,3)');
+});
+</script>
+</head>
+<body class="s-lib-public-body">
+<!-- BEGIN: Page Header -->
+
+<div class="lcheader s-lib-header container s-lib-side-borders">
+
+    <div id="searchwidget" style="margin: 150px 350px;">
+
+        <ul class="nav nav-tabs">
+            <li class="active" id="primo"><a data-toggle="tab" href="#home">Everything</a></li>
+            <li id="jrn"><a data-toggle="tab" href="#menu1">Journals</a></li>
+            <li id="db"><a data-toggle="tab" href="#menu2">Databases</a></li>
+            <li id="gd"><a data-toggle="tab" href="#menu3">Guides</a></li>
+        </ul>
+
+        <div class="tab-content">
+
+            <div id="home" class="tab-pane fade in active">
+                <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
+                    <div class="label">
+                        <select name="index" id="all">
+                            <option selected="selected" value="any">Keyword</option>
+                            <option value="title">Title</option>
+                            <option value="creator">Author</option>
+                            <option value="sub">Subject</option>
+                        </select>
+                        <input class="searchwidget_input all" name="q" type="text" placeholder="Find books, AV materials, and articles">
+                    </div>
+                    <input name="SUBMIT" value="Search" class="button wc" src="https://s3.amazonaws.com/libapps/customers/3066/images/searchwhite.png" type="image">
+                </form>
+                <div id="search_extras">
+                    <a href="http://alliance-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&amp;ct=AdvancedSearch&amp;dscnt=2&amp;fromLogin=true&amp;vid=LCC">Advanced Search</a> |
+                    <a href="http://watzek.on.worldcat.org/discovery" target="_blank">WorldCat</a>
+                </div>
+            </div>
+
+            <div id="menu1" class="tab-pane fade">
+                <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
+                    <div class="label">
+                        <input class="searchwidget_input all" name="q" type="text" placeholder="Find journal articles by title">
+                    </div>
+                    <input name="SUBMIT" value="Search" class="button wc" src="https://s3.amazonaws.com/libapps/customers/3066/images/searchwhite.png" type="image">
+                </form>
+                <div id="search_extras">
+                    <a href="http://alliance-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&amp;ct=AdvancedSearch&amp;dscnt=2&amp;fromLogin=true&amp;vid=LCC">Advanced Search</a> |
+                    <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+                </div>
+            </div>
+
+            <div id="menu2" class="tab-pane fade">
+                <div class="label">
+                    <input name="q" id="databases" type="text" placeholder="Find databases by name" class="searchwidget_input searchbox" />
+                    <input name="SUBMIT" value="Search" class="button wc" src="https://s3.amazonaws.com/libapps/customers/3066/images/searchwhite.png" type="image">
+                </div>
+                <div id="search_extras">
+                    <a href="">Databases by Subject</a> |
+                    <a href="">Databases A-Z</a>
+                </div>
+            </div>
+
+            <div id="menu3" class="tab-pane fade">
+                <div class="label">
+                    <input name="q" id="guides" type="text" placeholder="Find research and course guides" class="searchwidget_input searchbox" />
+                    <input name="SUBMIT" value="Search" class="button wc" src="https://s3.amazonaws.com/libapps/customers/3066/images/searchwhite.png" type="image">
+                </div>
+                <div id="search_extras">
+                    <a href="">Guides by Subject</a> |
+                    <a href="">Guides by Course</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        <!-- #searchwidget-->
+</div>
+</body>
+</html>
