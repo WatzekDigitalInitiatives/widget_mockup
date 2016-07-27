@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
 <title>Widget mockup test page</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow,noarchive" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
@@ -28,6 +24,7 @@ $('document').ready(function(){
 });
 </script>
 </head>
+
 <body class="s-lib-public-body">
 <!-- BEGIN: Page Header -->
 
@@ -36,15 +33,15 @@ $('document').ready(function(){
     <div id="searchwidget" style="margin: 150px 350px;">
 
         <ul class="nav nav-tabs">
-            <li class="active" id="primo"><a data-toggle="tab" href="#home">Books & More</a></li>
-            <li id="jrn"><a data-toggle="tab" href="#menu1">Journals</a></li>
-            <li id="db"><a data-toggle="tab" href="#menu2">Databases</a></li>
-            <li id="gd"><a data-toggle="tab" href="#menu3">Guides</a></li>
+            <li class="active primo"><a data-toggle="tab" href="#primo">Books & More</a></li>
+            <li class="journals"><a data-toggle="tab" href="#journals">Journals</a></li>
+            <li class="databases"><a data-toggle="tab" href="#databases">Databases</a></li>
+            <li class="guides"><a data-toggle="tab" href="#guides">Guides</a></li>
         </ul>
 
         <div class="tab-content">
 
-            <div id="home" class="tab-pane fade in active">
+            <div id="primo" class="tab-pane fade in active">
                 <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
                     <div class="label">
                         <select name="index" id="all">
@@ -63,7 +60,7 @@ $('document').ready(function(){
                 </div>
             </div>
 
-            <div id="menu1" class="tab-pane fade">
+            <div id="journals" class="tab-pane fade">
                 <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
                     <div class="label">
                         <input class="searchwidget_input all" name="q" type="text" placeholder="Find journal articles by title">
@@ -76,7 +73,7 @@ $('document').ready(function(){
                 </div>
             </div>
 
-            <div id="menu2" class="tab-pane fade">
+            <div id="databases" class="tab-pane fade">
                 <div class="label">
                     <input name="q" id="databases" type="text" placeholder="Find databases by name" class="searchwidget_input searchbox" />
                     <input name="SUBMIT" value="Search" class="button wc" src="https://s3.amazonaws.com/libapps/customers/3066/images/searchwhite.png" type="image">
@@ -87,7 +84,7 @@ $('document').ready(function(){
                 </div>
             </div>
 
-            <div id="menu3" class="tab-pane fade">
+            <div id="guides" class="tab-pane fade">
                 <div class="label">
                     <input name="q" id="guides" type="text" placeholder="Find research and course guides" class="searchwidget_input searchbox" />
                     <input name="SUBMIT" value="Search" class="button wc" src="https://s3.amazonaws.com/libapps/customers/3066/images/searchwhite.png" type="image">
