@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="widget_test.css" />
     <script src="https://library.lclark.edu/library.lclark.style/build/watzek_js.min.js"></script>
     <script src="https://library.lclark.edu/javascript/data/dbs_json3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <!-- END: CUSTOM HEAD JS/CSS -->
     <script>
         $('document').ready(function() {
@@ -22,6 +23,9 @@
             $('#searchwidget').css('msTransform', 'scale(3,3)');
             // Standard syntax
             $('#searchwidget').css('transform', 'scale(3,3)');
+            $('.selectpicker').selectpicker({
+              style: 'btn-sm',
+            });
         });
     </script>
 </head>
@@ -29,7 +33,7 @@
 <body class="s-lib-public-body">
     <div class="lcheader s-lib-header container s-lib-side-borders">
 
-        <div id="searchwidget" style="margin: 150px 350px;">
+        <div id="searchwidget">
 
             <ul class="nav nav-tabs">
                 <li class="active primo"><a data-toggle="tab" href="#primo">Books & More</a></li>
@@ -42,27 +46,54 @@
 
                 <div id="primo" class="tab-pane fade in active">
                     <div class="row">
-                        <div class="col-xs-12">
-                            <div class="input-group">
-                                <input type="text" class="form-control" aria-label="...">
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-default">Go</button>
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
+                        <div class="searchbox col-xs-12">
+                            <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" name="q" placeholder="Find books, AV materials, and articles" class="form-control textbox">
+                                    <div class="input-group-btn">
+                                        <select class="selectpicker" name="index" style="display:none;">
+                                            <option selected="selected" value="any">Keyword</option>
+                                            <option value="title">Title</option>
+                                            <option value="creator">Author</option>
+                                            <option value="sub">Subject</option>
+                                        </select>
+                                        <input type="submit" class="btn btn-default" value="Go">
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="searchextras col-xs-10 pull-right">
+                            <a href="http://alliance-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&amp;ct=AdvancedSearch&amp;dscnt=2&amp;fromLogin=true&amp;vid=LCC">Advanced Search</a> |
+                            <a href="http://watzek.on.worldcat.org/discovery" target="_blank">WorldCat</a>
                         </div>
                     </div>
                 </div>
 
                 <div id="journals" class="tab-pane fade">
-
+                    <div class="row">
+                        <div class="searchbox col-xs-12">
+                            <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" name="q" placeholder="Find journals by journal title" class="form-control textbox">
+                                    <div class="input-group-btn">
+                                        <select class="selectpicker" name="index" style="display:none;">
+                                            <option selected="selected" value="any">Title</option>
+                                            <option value="title">Article</option>
+                                        </select>
+                                        <input type="submit" class="btn btn-default" value="Go">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="searchextras col-xs-8 col-xs-push-6">
+                            <a href="http://alliance-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&amp;ct=AdvancedSearch&amp;dscnt=2&amp;fromLogin=true&amp;vid=LCC">Advanced Search</a> |
+                            <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="databases" class="tab-pane fade">
