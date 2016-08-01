@@ -64,7 +64,11 @@
 <body class="s-lib-public-body">
     <div class="lcheader s-lib-header container s-lib-side-borders">
 
-        <div id="searchwidget" style="margin: 150px 400px;">
+        <script>
+        $('.lcheader').load('http://library.lclark.edu/src/stag/watzek_header.html');
+        </script>
+
+        <!-- <div id="searchwidget" style="margin: 150px 400px;">
 
             <ul class="nav nav-tabs">
                 <li class="active primo"><a data-toggle="tab" href="#primo">Books & More</a></li>
@@ -174,7 +178,7 @@
                 </div>
 
             </div>
-        </div>
+        </div> -->
     </div>
 <script>
 setupSearchWidget();
