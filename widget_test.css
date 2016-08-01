@@ -9,9 +9,9 @@
     height: 150px;
 }
 #searchwidget {
+    height: 95px;
     width: 415px;
     float: right;
-    margin: 150px 350px;
 }
 #searchwidget .nav-tabs {
     text-transform: uppercase;
@@ -75,10 +75,13 @@
 #searchwidget #databases .searchbox {
     width: 100%;
 }
-#searchwidget .searchextras a {
+#searchwidget .searchextras, #searchwidget .searchextras a {
     color: #cccc99;
     font-weight: normal;
 }
 #searchwidget .searchextras {
     padding-top: 5px;
+}
+#searchwidget .dropdown-menu {
+    overflow: visible;
 }

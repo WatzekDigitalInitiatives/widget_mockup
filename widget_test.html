@@ -9,9 +9,9 @@
     <script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!-- BEGIN: CUSTOM HEAD JS/CSS -->
-    <link rel="stylesheet" href="http://library.lclark.edu/library.lclark.style/build/watzek_style.min.css" />
+    <link rel="stylesheet" href="http://library.lclark.edu/src/stag/watzek_style.min.css" />
     <link rel="stylesheet" href="widget_test.css" />
-    <script src="https://library.lclark.edu/library.lclark.style/build/watzek_js.min.js"></script>
+    <script src="https://library.lclark.edu/src/stag/watzek_js.min.js"></script>
     <script src="https://library.lclark.edu/javascript/data/dbs_json3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <!-- END: CUSTOM HEAD JS/CSS -->
@@ -75,7 +75,7 @@
 
             <div class="tab-content">
 
-                <div id="primo" class="tab-pane fade in active">
+                <div id="primo" class="tab-pane active">
                     <div class="row">
                         <div class="searchbox col-xs-12">
                             <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div id="journals" class="tab-pane fade">
+                <div id="journals" class="tab-pane ">
                     <div class="row">
                         <div class="searchbox col-xs-12">
                             <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
@@ -129,7 +129,7 @@
                     </div>
                 </div>
 
-                <div id="databases" class="tab-pane fade">
+                <div id="databases" class="tab-pane ">
                     <div class="row">
                         <div class="searchbox col-xs-12">
                             <form action="/srch.php" method="get">
@@ -151,7 +151,7 @@
                     </div>
                 </div>
 
-                <div id="guides" class="tab-pane fade">
+                <div id="guides" class="tab-pane ">
                     <div class="row">
                         <div class="searchbox col-xs-12">
                             <form action="/srch.php" method="get">
@@ -175,8 +175,11 @@
 
             </div>
         </div>
-        <!-- #searchwidget-->
     </div>
+<script>
+setupSearchWidget();
+bindDatabaseAutocomplete();
+</script>
 </body>
 
 </html>
