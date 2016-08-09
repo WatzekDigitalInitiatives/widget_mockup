@@ -10,7 +10,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <!-- BEGIN: CUSTOM HEAD JS/CSS -->
     <link rel="stylesheet" href="http://library.lclark.edu/src/stag/watzek_style.min.css" />
-    <link rel="stylesheet" href="widget_test_2.css" />
+    <link rel="stylesheet" href="widget_test.css" />
     <script src="https://library.lclark.edu/src/stag/watzek_js.min.js"></script>
     <script src="https://library.lclark.edu/javascript/data/dbs_json3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
@@ -49,14 +49,11 @@
             });
             $('.journalquery').change(function(){
                 switch($(this).val()){
+                    case 'any':
+                        $('.journalinput').prop("placeholder","Find journals by journal title")
+                        break;
                     case 'title':
-                        $('.journalinput').prop("placeholder","Find journals by title")
-                        break;
-                    case 'article':
-                        $('.journalinput').prop("placeholder","Find articles by title")
-                        break;
-                    case 'db':
-                        $('.journalinput').prop("placeholder","Find databases by title")
+                        $('.journalinput').prop("placeholder","Find journals by article title")
                         break;
                 }
             });
@@ -70,34 +67,15 @@
         <div id="searchwidget" style="margin: 150px 400px;">
 
             <ul class="nav nav-tabs">
-                <li class="active primo"><a data-toggle="tab" href="#primo">Quick Search</a></li>
-                <li class="books"><a data-toggle="tab" href="#books">Books & Media</a></li>
-                <li class="articles"><a data-toggle="tab" href="#articles">Articles</a></li>
+                <li class="active primo"><a data-toggle="tab" href="#primo">Books & More</a></li>
+                <li class="journals"><a data-toggle="tab" href="#journals">Journals</a></li>
+                <li class="databases"><a data-toggle="tab" href="#databases">Databases</a></li>
                 <li class="guides"><a data-toggle="tab" href="#guides">Guides</a></li>
             </ul>
 
             <div class="tab-content">
 
                 <div id="primo" class="tab-pane active">
-                    <div class="row">
-                        <div class="searchbox col-xs-12">
-                            <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" name="q" placeholder="" class="form-control textbox quickinput">
-                                    <div class="input-group-btn">
-                                        <input type="submit" class="btn btn-default" value="Go">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="searchextras col-xs-12 text-right">
-                        </div>
-                    </div>
-                </div>
-
-                <div id="books" class="tab-pane ">
                     <div class="row">
                         <div class="searchbox col-xs-12">
                             <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
@@ -117,30 +95,47 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="searchextras scopebuttons col-xs-7 text-left">
-                            <label class="radio-inline"><input type="radio" name="scope" value="LCC" checked>L&C</label>
-                            <label class="radio-inline"><input type="radio" name="scope" value="Summit">Summit</label>
-                            <label class="radio-inline"><input type="radio" name="scope" value="WorldCat">WorldCat</label>
-                        </div>
-                        <div class="searchextras col-xs-5 text-right">
+                        <div class="searchextras col-xs-12 text-right">
                             <a href="http://alliance-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?mode=Advanced&amp;ct=AdvancedSearch&amp;dscnt=2&amp;fromLogin=true&amp;vid=LCC">Advanced Search</a> |
+                            <a href="http://watzek.on.worldcat.org/discovery" target="_blank">WorldCat</a> |
                             <img src="https://library.lclark.edu/images/questiontan.png" style="height:12px; ">
                         </div>
                     </div>
                 </div>
 
-                <div id="articles" class="tab-pane ">
+                <div id="journals" class="tab-pane ">
                     <div class="row">
                         <div class="searchbox col-xs-12">
                             <form action="http://library.lclark.edu/reference/access_resource_primo.php" method="get">
                                 <div class="input-group input-group-sm">
-                                    <input type="text" name="q" placeholder="Find articles by title" class="form-control textbox journalinput">
+                                    <input type="text" name="q" placeholder="Find journals by journal title" class="form-control textbox journalinput">
                                     <div class="input-group-btn">
                                         <select class="journalquery selectpicker" name="index" style="display:none;">
-                                            <option value="article" selected>Articles</option>
-                                            <option value="title">Journals</option>
-                                            <option value="db">Databases</option>
+                                            <option selected="selected" value="any">Journal</option>
+                                            <option value="title">Article</option>
                                         </select>
+                                        <input type="submit" class="btn btn-default" value="Go">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="searchextras col-xs-12 text-right">
+                            <a href="">Advanced Search</a> |
+                            <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> |
+                            <img src="https://library.lclark.edu/images/questiontan.png" style="height:12px; ">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="databases" class="tab-pane ">
+                    <div class="row">
+                        <div class="searchbox col-xs-12">
+                            <form action="/srch.php" method="get">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" name="q" placeholder="Find databases by name" class="form-control textbox">
+                                    <div class="input-group-btn">
                                         <input type="submit" class="btn btn-default" value="Go">
                                     </div>
                                 </div>
@@ -161,7 +156,7 @@
                         <div class="searchbox col-xs-12">
                             <form action="/srch.php" method="get">
                                 <div class="input-group input-group-sm">
-                                    <input type="text" name="q" placeholder="Find guides and library information" class="form-control textbox">
+                                    <input type="text" name="q" placeholder="Find course and research guides" class="form-control textbox">
                                     <div class="input-group-btn">
                                         <input type="submit" class="btn btn-default" value="Go">
                                     </div>
