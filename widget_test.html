@@ -15,49 +15,6 @@
     <script src="https://library.lclark.edu/javascript/data/dbs_json3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <!-- END: CUSTOM HEAD JS/CSS -->
-    <script>
-        $('document').ready(function() {
-            // Code for Safari
-            $('#searchwidget').css('WebkitTransform', 'scale(3,3)');
-            // Code for IE9
-            $('#searchwidget').css('msTransform', 'scale(3,3)');
-            // Standard syntax
-            $('#searchwidget').css('transform', 'scale(3,3)');
-            // Styling
-            // remove check marks
-            $('.input-group-btn').find('.check-mark').hide();
-            // change placeholder texts on option selection
-            $('.primoquery').change(function(){
-                switch($(this).val()){
-                    case 'any':
-                        $('.primoinput').prop("placeholder","Find books, AV materials, and articles by keyword")
-                        break;
-                    case 'sub':
-                        $('.primoinput').prop("placeholder","Find books, AV materials, and articles by subject")
-                        break;
-                    case 'title':
-                        $('.primoinput').prop("placeholder","Find books, AV materials, and articles by title")
-                        break;
-                    case 'creator':
-                        $('.primoinput').prop("placeholder","Find books, AV materials, and articles by author")
-                        break;
-                }
-            });
-            $('.journalquery').change(function(){
-                switch($(this).val()){
-                    case 'title':
-                        $('.journalinput').prop("placeholder","Find journals by title")
-                        break;
-                    case 'article':
-                        $('.journalinput').prop("placeholder","Find articles by title")
-                        break;
-                    case 'db':
-                        $('.journalinput').prop("placeholder","Find databases by title")
-                        break;
-                }
-            });
-        });
-    </script>
 </head>
 
 <body class="s-lib-public-body">
