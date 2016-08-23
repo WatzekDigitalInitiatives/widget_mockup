@@ -14,11 +14,21 @@
     <script src="https://library.lclark.edu/javascript/data/dbs_json3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <!-- END: CUSTOM HEAD JS/CSS -->
+    <script>
+    $(function() {
+        // Code for Safari
+        $('#searchwidget').css('WebkitTransform', 'scale(3,3)');
+        // Code for IE9
+        $('#searchwidget').css('msTransform', 'scale(3,3)');
+        // Standard syntax
+        $('#searchwidget').css('transform', 'scale(3,3)');
+    });
+    </script>
 </head>
 
 <body class="s-lib-public-body">
     <div class="lcheader s-lib-header container s-lib-side-borders">
-        <div id="searchwidget" style="margin: 150px 400px;">
+        <div id="searchwidget" style="margin: 50%;">
             <script>
             $('#searchwidget').load('http://library.lclark.edu/src/stag/watzek_header.html #searchwidget', function(){
                 $('.selectpicker').selectpicker({
